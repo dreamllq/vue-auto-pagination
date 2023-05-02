@@ -1,7 +1,7 @@
 {
   "name": "lc-vue-auto-pagination",
   "description": "分页组件",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "type": "module",
   "main": "./dist/vue-auto-pagination.umd.cjs",
   "module": "./dist/vue-auto-pagination.js",
