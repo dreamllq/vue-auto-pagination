@@ -14,8 +14,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      name: 'ViteVue3TsComponentTemplate',
-      fileName: 'vite-vue3-ts-component-template'
+      name: 'VueAutoPagination',
+      fileName: 'vue-auto-pagination'
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
