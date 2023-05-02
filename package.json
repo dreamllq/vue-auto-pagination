@@ -1,6 +1,6 @@
 {
   "name": "lc-vue-auto-pagination",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "type": "module",
   "main": "./dist/vue-auto-pagination.umd.cjs",
   "module": "./dist/vue-auto-pagination.js",
