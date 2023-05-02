@@ -1,5 +1,8 @@
+
+# 基础用法
+
 <script setup>
-import {AutoPagination} from '@'
+import {AutoPagination} from 'lc-vue-auto-pagination'
 import {ref,onMounted } from 'vue'
 
 const pagination = ref();
@@ -13,7 +16,6 @@ const fetchData = ({ pageNo, pageSize }) =>{
 }
 </script>
 
-# 基础用法
 
 <div style="height: 400px;">
   <AutoPagination :fetch-data="fetchData" ref="pagination">

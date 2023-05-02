@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       '@components': path.resolve(__dirname, '.vitepress/components'),
       '@': path.resolve(__dirname, '../src'),
+      'lc-vue-auto-pagination': path.resolve(__dirname, '../src'),
       '@dist': path.resolve(__dirname, '../')
     }
   }
