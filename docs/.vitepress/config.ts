@@ -1,8 +1,14 @@
 import { defineConfig } from 'vitepress'
+import pkg from '../../package.json';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base:'/lc-vue-auto-pagination/docs/.vitepress/dist/',
-  title: "lc-vue-auto-pagination",
-  description: "lc-vue-auto-pagination",
+  base: `/${pkg.name}@${pkg.version}/docs/.vitepress/dist`,
+  title: `${pkg.name}-${pkg.version}`,
+  description: pkg.description,
+  vite:{
+    build:{
+      modulePreload: false
+    }
+  }
 })

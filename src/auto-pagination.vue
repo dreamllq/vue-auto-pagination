@@ -25,18 +25,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onMounted, nextTick } from 'vue';
+import { ref, watch, onMounted, nextTick, PropType } from 'vue';
 
 const props = defineProps({
   fetchData: {
-    type: Function,
+    type: Function as PropType<(option?:{pageNo:number, pageSize: number})=>{list: any[], total:number}>,
     default: () => ({
       list: [],
       total: 0
     })
   },
   pageSizes: {
-    type: Array,
+    type: Array as PropType<number[]>,
     default: () => [
       10,
       20,
@@ -49,7 +49,7 @@ const props = defineProps({
     default: 20
   },
   prePageChanged: {
-    type: Function,
+    type: Function as PropType<(newVal:number, oldVal:number)=>boolean>,
     default: () => true
   },
   noPagination: {
@@ -65,7 +65,7 @@ const props = defineProps({
 const total = ref(0);
 const pageSize = ref(props.defaultPageSize);
 const currentPage = ref(1);
-const data = ref([]);
+const data = ref<any[]>([]);
 const loadingData = ref(false);
 const flagPage = ref(1);
 
@@ -98,8 +98,8 @@ const refreshData = async () => {
   loadingData.value = true;
   if (props.noPagination === false) {
     let { list, total: t } = await props.fetchData({
-      pageNo: currentPage,
-      pageSize: pageSize
+      pageNo: currentPage.value,
+      pageSize: pageSize.value
     });
     if (list.length > 0 || currentPage.value === 1) {
       data.value = [];
