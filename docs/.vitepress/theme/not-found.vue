@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    404
   </div>
 </template>
 
@@ -10,9 +10,8 @@ import { withBase, useRouter } from 'vitepress'
 const root = ref('/')
 const router = useRouter()
 onMounted(() => {
-  onMounted(()=>{
-    router.go(withBase('/'))
-  })
+  console.log(withBase('/'))
+  router.go(withBase('/'))
 })
 </script>
 
