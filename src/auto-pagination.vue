@@ -190,7 +190,7 @@ defineExpose({
   }
 
   .auto-pagination_main {
-    margin-top: 16px;
+    margin-top: var(--auto-pagination-footer-margin-top);
     flex: none;
   }
 }
