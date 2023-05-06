@@ -29,7 +29,7 @@ import { ref, watch, onMounted, nextTick, PropType } from 'vue';
 
 const props = defineProps({
   fetchData: {
-    type: Function as PropType<(option?:{pageNo:number, pageSize: number})=>{list: any[], total:number}>,
+    type: Function as PropType<(option?:{pageNo:number, pageSize: number})=>Promise<{list: any[], total:number}>>,
     default: () => ({
       list: [],
       total: 0
